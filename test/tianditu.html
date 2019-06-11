@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Intro to SceneView - Create a 3D map</title>
+
+    <link rel="stylesheet" type="text/css" href="css/leaflet.css" />
+    <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../dist/luckylottery.js"></script>
+
+    <style>
+        html,
+        body,
+        #map {
+            padding: 0;
+            margin: 0;
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <script type="text/javascript">
+        const calc = LuckyLottery.createCaculate('double_color_ball')
+        LuckyLottery.Ajax.queryCondition().then(cs => {
+            calc.ready().then(o => {
+                o.addCondition(cs[0]);
+                o.process().then(res => {
+                    console.log(res);
+                })
+            })
+
+        })
+    </script>
+</body>
+
+
+</html>
