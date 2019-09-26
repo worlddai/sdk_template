@@ -8,7 +8,7 @@
 
     <link rel="stylesheet" type="text/css" href="css/leaflet.css" />
     <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="../dist/luckylottery.js"></script>
+    <script type="text/javascript" src="../dist/animals.js"></script>
 
     <style>
         html,
@@ -24,16 +24,8 @@
 
 <body>
     <script type="text/javascript">
-        const calc = LuckyLottery.createCaculate('double_color_ball')
-        LuckyLottery.Ajax.queryCondition().then(cs => {
-            calc.ready().then(o => {
-                o.addCondition(cs[0]);
-                o.process().then(res => {
-                    console.log(res);
-                })
-            })
-
-        })
+       var pdog = new Animals.PoodleDog('aaa');
+       pdog.share();
     </script>
 </body>
 

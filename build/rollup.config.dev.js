@@ -4,10 +4,14 @@ import commonjs from 'rollup-plugin-commonjs';
 import json from 'rollup-plugin-json';
 
 export default {
-    entry: 'src/index.js',
-    moduleName: 'Animals',
-    format: 'umd',
-    dest: 'dist/animals.js',
+
+    input: 'src/index.js',
+    output:{
+        name:"Animals",
+        file:"dist/animals.js",
+        format: 'umd',
+        sourcemap: true,
+    },
     plugins: [
         resolve({
             browser: true,
@@ -17,6 +21,5 @@ export default {
         babel({
             exclude: 'node_modules/**',
         }),
-    ],
-    sourceMap: true,
+    ]
 };
